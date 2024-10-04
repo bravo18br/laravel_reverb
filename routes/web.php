@@ -10,8 +10,8 @@ Route::get('/', function () {
 });
 
 Route::get('send-notification', function () {
-    $message['status']=request()->query('status','success');
-    $message['body']='Mensagem body padrão';
+    $message['status'] = request()->query('status', 'success');
+    $message['body'] = 'Mensagem body padrão';
 
     $u = User::first();
     $u->notify(new MessageTestNotification($message));
